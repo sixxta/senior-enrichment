@@ -1,3 +1,5 @@
+/* eslint-disable class-methods-use-this */
+
 import React from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -15,7 +17,7 @@ class Routes extends React.Component {
     this.props.fetchInitialData();
   }
 
-    render () {
+  render () {
       return (
       <div>
       <Router >
@@ -32,7 +34,6 @@ class Routes extends React.Component {
       </Router>
       </div>
 )}}
-
 
 const mapProps = null;
 

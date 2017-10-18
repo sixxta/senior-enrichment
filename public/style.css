@@ -2,7 +2,7 @@
  * Some Default Styles are provided for your convenience.
  * You can start adding your own CSS below line 60.
  */
-
+/*
  * {
   box-sizing: border-box;
 }
@@ -32,7 +32,7 @@ h1, h2, h3, nav {
 }
 
 /* Responsive images */
-img {
+/* img {
   max-width: 100%;
   height: auto;
 }

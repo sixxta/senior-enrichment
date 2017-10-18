@@ -50,13 +50,3 @@ const mapState = ({ students }) => ({ students});
 const mapDispatch = null;
 
 export default connect(mapState, mapDispatch)(SingleCampus);
-
-// {console.log(this.props.students.map(student => student.campusId))}
-//         {console.log(Number(this.props.match.params.id))}
-//         {console.log(this.props.students.filter(
-//         function(student) {return student.campusId === this.props.match.params.id}))}
-
-// console.log(Number(campusId))
-//     console.log(this.props.students.map(student => student.campusId))
-//     console.log(this.props.students.filter(
-//          function(student) {return student.campusId === Number(campusId)}));
