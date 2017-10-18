@@ -36,18 +36,18 @@ Use at least sequelize, express, react, and redux when creating this app. You ca
 #### See Wireframes folder for visual
 
 - Navigation: as a user I...
-  * will land on **Home** by default
-  * can navigate to **Campuses** from **Home**
-  * can navigate to **Students** from **Home**
-  * can navigate to view a **Single Campus** from **Campuses**
-  * can navigate to view a **Single Student** from **Students**
+  X will land on **Home** by default
+  X can navigate to **Campuses** from **Home**
+  X can navigate to **Students** from **Home**
+  X can navigate to view a **Single Campus** from **Campuses**
+  X can navigate to view a **Single Student** from **Students**
   * can navigate to view a **Single Student** from **Single Campus** (for any student at that campus)
   * can navigate to view that student's **Single Campus** from **Single Student**
 
 - Views: as a user I...
-  * see a list of all campuses on the **Campuses** view
-  * see a list of all students on the **Students** view
-  * see details about a campus on the **Single Campus** view, including that campus's students
+  X see a list of all campuses on the **Campuses** view
+  X see a list of all students on the **Students** view
+  X see details about a campus on the **Single Campus** view, including that campus's students
   * see details about a student on the **Single Student** view, including that student's campus
 
 - Actions: as a user I...
@@ -62,33 +62,39 @@ Use at least sequelize, express, react, and redux when creating this app. You ca
 
 ```
 GET
-- all campuses
-- a campus by id
-- all students
-- a student by id
+X all campuses
+X a campus by id
+X all students
+X a student by id
 ```
 
 ```
 POST
-- new campus
-- new student
+X new campus
+X new student
 ```
 
 ```
 PUT
-- updated student info for one student
-- updated campus info for one campus
+X updated student info for one student
+X updated campus info for one campus
 ```
 
 ```
 DELETE
-- a campus
-- a student
+X a campus
+X a student
 ```
+WBN:
+- see about having to require campusId on new student instances
+- move api.js to the /api folder
+
+TO DO:
+- finish views
 
 ### How to test functionality without a frontend
 - GET: use your browser
-- POST / PUT / DELETE : 
+- POST / PUT / DELETE :
  - CLI (command line interface) with `curl`
    - e.g. `curl -H "Content-Type: application/json" -X POST -d '{"username":"kate","password":"1234"}' http://localhost:3000/api/login`
    - `-H`: headers. `-X`: verb. `-d`: data (must be of the type specified in headers). http://[address]:[port]/[route_path]

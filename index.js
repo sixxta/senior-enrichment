@@ -20,4 +20,9 @@ if (!reasonableName.test(pkg.name)) {
   console.error(chalk.red(nameError))
 }
 
-module.exports = pkg
+
+const db = require('./db');
+const api = require('./server/api');
+
+
+module.exports = pkg;

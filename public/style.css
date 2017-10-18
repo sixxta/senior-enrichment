@@ -1,0 +1,170 @@
+/*
+ * Some Default Styles are provided for your convenience.
+ * You can start adding your own CSS below line 60.
+ */
+
+ * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+p {
+  color: #252525;
+  line-height: 1.5em;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: normal;
+}
+
+h1, h2, h3, nav {
+  font-family: "Saira Extra Condensed", sans-serif;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Default section styling */
+section {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+}
+section h2 {
+  text-align: center;
+  position: relative;
+  margin: 60px 0;
+}
+section h2:after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  width: 60px;
+  height: 1px;
+  background-color: #f39c12;
+  left: 50%;
+  margin-left: -30px;
+}
+
+/* Header defaults */
+header {
+  background-color: rgba(37, 37, 37, 0.8);
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  width: calc(100vw - 8em);
+  margin: 0 4em;
+  padding: 1.5em;
+  border-radius: 0 0 1em 1em;
+}
+
+header .logo {
+  height: 4em;
+}
+
+.logo img {
+  height: 100%;
+}
+
+/*
+ * YOUR CSS:
+ */
+
+.flex {
+  display: flex;
+}
+
+#staff > div {
+  flex-wrap: wrap;
+}
+
+.staff-profile {
+  flex-basis: calc(100% / 3);
+  text-align: center;
+  padding: 1.5em;
+}
+
+.headshot {
+  height: 5em;
+  width: 5em;
+}
+
+.staff-bio {
+  font-style: italic;
+}
+
+.staff-name {
+  font-size: 1.5em;
+}
+
+#about {
+  background-color: #efefef;
+  padding: 0 2em;
+}
+
+#about p {
+  flex-basis: 50%;
+}
+
+#about #aboutmockup {
+  flex-basis: 50%;
+}
+
+.nav-item {
+  font-size: 1.5em;
+  padding: 0 0.5em;
+}
+
+.nav-item a {
+  color: white;
+  text-decoration: none;
+}
+
+#carousel {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-image {
+  position: absolute;
+}
+
+#carousel-text {
+  position: absolute;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .staff-profile {
+    flex-basis: calc(100% / 2);
+  }
+}
+
+@media (max-width: 600px) {
+  .staff-profile {
+    flex-basis: 100%;
+  }
+
+  #aboutmockup {
+    display: none;
+  }
+
+  #about p {
+    flex-basis: 100%;
+  }
+}
