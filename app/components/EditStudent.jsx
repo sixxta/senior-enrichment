@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addStudent } from './../reducers/campuses'
+import { updateStudent } from './../reducers/students'
 
-class AddStudent extends React.Component {
+class EditStudent extends React.Component {
   constructor(){
     super();
     this.submit = this.submit.bind(this);
@@ -11,11 +11,11 @@ class AddStudent extends React.Component {
   render(){
     return (
       <div className="list-group-item min-content user-item">
-      <form className="media" onSubmit={this.submit}>
+      <form onSubmit={this.submit}>
         <div className="media-left media-middle icon-container">
           <button
             type="submit"
-            className="glyphicon glyphicon-plus clickable"/>
+            className="glyphicon glyphicon-plus clickable" />
         </div>
         <div className="media-body">
           <h4 className="media-heading tucked">
@@ -43,13 +43,11 @@ class AddStudent extends React.Component {
               )})}
             </select>
           </h4>
-
         </div>
       </form>
     </div>
     )
   }
-
   submit(event) {
     event.preventDefault();
     const student = {
@@ -57,8 +55,9 @@ class AddStudent extends React.Component {
       email: event.target.email.value,
       campusId: event.target.campusId.value
     };
-    this.props.addStudent(student);
-    event.target.name.value = '';
+    const id = this.props.id;
+    this.props.updateStudent(id, student);
+    this.props.switchView();
   }
 }
 
@@ -66,9 +65,9 @@ const mapState = ({ campuses, students }) => ({ campuses, students });
 const mapDispatch = function(dispatch) {
   return {
     submit(student){
-      dispatch(addStudent(student))
+      dispatch(updateStudent(id, student))
     }
   }
 };
 
-export default connect(mapState, mapDispatch)(AddStudent);
+export default connect(mapState, mapDispatch)(EditStudent);

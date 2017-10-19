@@ -12,7 +12,7 @@ class AllCampuses extends React.Component {
     <div>
       <AddCampus addCampus={this.props.addCampus} />
       <ul>
-        {this.props.campuses.map(campus => {return (
+        {this.props.campuses.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase()).map(campus => {return (
         <Campus key={campus.id} campus={campus} removeCampus={this.props.removeCampus} />
         )}
       )}

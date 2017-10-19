@@ -1,3 +1,5 @@
+/* eslint-disable react/prefer-stateless-function */
+
 import React from 'react';
 import { connect } from 'react-redux'
 import { addStudent, removeStudent } from '../reducers/students'
@@ -12,7 +14,7 @@ class AllStudents extends React.Component {
     <div>
       <ul>
         <AddStudent addStudent={this.props.addStudent}/>
-        {this.props.students.map(student => {return (
+        {this.props.students.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase()).map(student => {return (
         <Student key={student.id} student={student} removeStudent={this.props.removeStudent}/>
         )}
       )}

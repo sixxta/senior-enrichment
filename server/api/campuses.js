@@ -22,10 +22,8 @@ campusRouter.post('/', function(req, res, next){
 campusRouter.put('/:id', function(req, res, next){
 	Campus.update(req.body, { where: {
 		id: req.params.id
-	}})
-  .then(function () {
-    res.status(204).end();
-  })
+	}, returning: true})
+  .then(student => res.send(student))
   .catch(next);
 })
 

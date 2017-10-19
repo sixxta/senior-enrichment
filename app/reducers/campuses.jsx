@@ -63,6 +63,6 @@ export const addCampus = campus => dispatch => {
 
 export const updateCampus = (id, campus) => dispatch => {
   axios.put(`/api/campuses/${id}`, campus)
-       .then(res => dispatch(update(res.data)))
+       .then(res => dispatch(update(res.data[1][0])))
        .catch(err => console.error(`Updating campus: ${campus} unsuccesful`, err));
 };

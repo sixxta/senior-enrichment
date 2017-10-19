@@ -7,6 +7,8 @@ import AllStudents from './AllStudents';
 import AllCampuses from './AllCampuses';
 import SingleCampus from './SingleCampus';
 import SingleStudent from './SingleStudent';
+import EditCampus from './EditCampus';
+import EditStudent from './EditStudent';
 import Navbar from './Navbar';
 import { fetchCampuses } from './../reducers/campuses';
 import { fetchStudents } from './../reducers/students';
@@ -27,8 +29,10 @@ class Routes extends React.Component {
             <Route exact path="/" component={AllCampuses} />
             <Route exact path="/students" component={AllStudents} />
             <Route exact path="/campuses" component={AllCampuses} />
-            <Route path="/students/:id" component={SingleStudent} />
-            <Route path="/campuses/:id" component={SingleCampus} />
+            <Route exact path="/students/:id" component={SingleStudent} />
+            <Route exact path="/campuses/:id" component={SingleCampus} />
+            <Route path="/campuses/:id/edit" component={EditCampus} />
+            Router
           </Switch>
         </div>
       </Router>

@@ -8,7 +8,7 @@ studentRouter.get('/', function(req, res, next){
 });
 
 // studentRouter.get('/:id', function(req, res, next){
-// 	Student.findAll({
+// 	Student.findOne({
 // 		include: [Campus],
 // 		where:
 // 			{id: req.params.id}
@@ -33,10 +33,9 @@ studentRouter.post('/', function(req, res, next){
 studentRouter.put('/:id', function(req, res, next){
 	Student.update(req.body, { where: {
 		id: req.params.id
-	}})
-  .then(function () {
-    res.status(204).end();
-  })
+	}, returning: true
+})
+  .then(student => {res.send(student)})
   .catch(next);
 });
 

@@ -52,10 +52,10 @@ Use at least sequelize, express, react, and redux when creating this app. You ca
 
 - Actions: as a user I...
   X can create a campus
-  * can edit a campus's info, including adding/removing a student to/from that campus
+  X can edit a campus's info, including adding/removing a student to/from that campus
   X can delete a campus
-  * can create a student
-  * can edit a student's info, including the campus that student is assigned to
+  X can create a student
+  X can edit a student's info, including the campus that student is assigned to
   X can delete a student
 
 ### Routes
@@ -88,9 +88,11 @@ X a student
 WBN:
 - see about having to require campusId on new student instances
 - move api.js to the /api folder
-
-TO DO:
-- finish views
+- get a real seed going
+- include campus with student views
+- able to refresh on single student and campus routes
+- make it so edit student information and switching views re-renders
+- no student in a campus being shown
 
 ### How to test functionality without a frontend
 - GET: use your browser
