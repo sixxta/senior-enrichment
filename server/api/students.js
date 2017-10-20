@@ -19,7 +19,7 @@ studentRouter.get('/', function(req, res, next){
 // });
 
 studentRouter.get('/:id', function(req, res, next){
-	Student.findById(req.params.id)
+	Student.findById(req.params.id, {include: [Campus]})
 	.then(student => res.json(student))
 	.catch(next);
 });

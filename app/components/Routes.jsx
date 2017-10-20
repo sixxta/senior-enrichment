@@ -45,7 +45,6 @@ const mapDispatch = dispatch => ({
   fetchInitialData: () => {
     dispatch(fetchStudents());
     dispatch(fetchCampuses());
-
   }
 });
 

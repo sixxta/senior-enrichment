@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { updateCampus } from '../reducers/campuses';
 import { updateStudent } from '../reducers/students'
 import EditCampus from './EditCampus';
@@ -14,6 +14,7 @@ class SingleCampus extends React.Component {
       students: []
     };
     this.switchView = this.switchView.bind(this);
+    this.update = this.update.bind(this);
   }
 
   componentDidMount () {
@@ -30,16 +31,20 @@ class SingleCampus extends React.Component {
     const students = this.props.students.filter(function(student) {return student.campusId === campus.id})
     return (
       <div>
-        {this.state.displayEdit &&
-        <EditCampus
-        id={this.state.campus.id}
-        updateCampus={this.props.updateCampus}
-        updateStudent = {this.props.updateStudent}
-        switchView={this.switchView} />}
-        <button onClick={this.switchView}>Edit this information</button>
+        {this.state.displayEdit
+         ? <EditCampus
+            id={this.state.campus.id}
+            update={this.update}
+            updateCampus={this.props.updateCampus}
+            updateStudent = {this.props.updateStudent}
+            switchView={this.switchView}
+            name={this.state.campus.name} />
+         :  <button onClick={this.switchView}>Edit this information</button>
+          }
         <h3>{campus.name}</h3>
         <h2>{campus.imageURL}</h2>
         <ol>
+          {(students.length === 0) ? 'No Students Assigned' : <div /> }
           {students.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase()).map(student => { return (
             <li key={student.id}>
               <Link key ={student.id} to={`/students/${student.id}`}>
@@ -55,6 +60,10 @@ class SingleCampus extends React.Component {
   }
   switchView(){
     this.setState({displayEdit: !this.state.displayEdit})
+  }
+
+  update(campus){
+    this.setState({campus})
   }
 }
 

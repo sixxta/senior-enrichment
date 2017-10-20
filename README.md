@@ -86,13 +86,17 @@ X a campus
 X a student
 ```
 WBN:
-- see about having to require campusId on new student instances
+NN see about having to require campusId on new student instances
 - move api.js to the /api folder
 - get a real seed going
-- include campus with student views
-- able to refresh on single student and campus routes
+X include campus with AllStudent views
+- student and campus avatars
+X able to refresh on single student routes while rendering campus
 - make it so edit student information and switching views re-renders
-- no student in a campus being shown
+X no students in a campus being shown explicitly
+- CSS it up
+- student search
+- add more to the model
 
 ### How to test functionality without a frontend
 - GET: use your browser

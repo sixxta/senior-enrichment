@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-   <header className="flex">
-    <div className="logo">
+   <header>
+    <div>
       <Link to={`/`}>
       <img alt="logo" src="/logo.png" />
       </Link>
     </div>
-    <nav className="flex">
-      <div className="nav-item">
+    <nav>
+      <div>
         <Link to={`/campuses/`}>Campuses</Link>
       </div>
-      <div className="nav-item">
+      <div>
         <Link to={`/students/`}>Students</Link>
       </div>
     </nav>

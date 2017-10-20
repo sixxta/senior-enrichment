@@ -10,15 +10,15 @@ class AddStudent extends React.Component {
 
   render(){
     return (
-      <div className="list-group-item min-content user-item">
-      <form className="media" onSubmit={this.submit}>
-        <div className="media-left media-middle icon-container">
-          <button
-            type="submit"
-            className="glyphicon glyphicon-plus clickable"/>
+      <div>
+      <form onSubmit={this.submit}>
+        <div>
+          <button type="submit">
+          Add a student
+          </button>
         </div>
-        <div className="media-body">
-          <h4 className="media-heading tucked">
+        <div>
+          <h4>
             <input
               name="name"
               type="text"
@@ -27,7 +27,7 @@ class AddStudent extends React.Component {
               className="form-like"
             />
           </h4>
-          <h4 className="media-heading tucked">
+          <h4>
             <input
               name="email"
               type="text"
@@ -36,7 +36,7 @@ class AddStudent extends React.Component {
               className="form-like"
             />
           </h4>
-          <h4 className="media-heading tucked">
+          <h4>
             <select name="campusId">
               {this.props.campuses.map(campus => { return (
                 <option key={campus.id} value={campus.id}>{campus.name}</option>
@@ -59,10 +59,11 @@ class AddStudent extends React.Component {
     };
     this.props.addStudent(student);
     event.target.name.value = '';
+    event.target.email.value = '';
   }
 }
 
-const mapState = ({ campuses, students }) => ({ campuses, students });
+const mapState = ({ campuses }) => ({ campuses });
 const mapDispatch = function(dispatch) {
   return {
     submit(student){

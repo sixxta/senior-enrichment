@@ -10,21 +10,20 @@ class AddCampus extends React.Component {
 
   render(){
     return (
-      <div className="list-group-item min-content user-item">
+      <div>
       <form className="media" onSubmit={this.submit}>
-        <div className="media-left media-middle icon-container">
-          <button
-            type="submit"
-            className="glyphicon glyphicon-plus clickable"/>
+        <div>
+          <button type="submit">
+          Add a campus
+          </button>
         </div>
-        <div className="media-body">
-          <h4 className="media-heading tucked">
+        <div>
+          <h4 >
             <input
               name="name"
               type="text"
               placeholder="name"
               required
-              className="form-like"
             />
           </h4>
 
@@ -39,9 +38,10 @@ class AddCampus extends React.Component {
     const campus = {
       name: event.target.name.value
     };
-    console.log(this.props);
-    this.props.addCampus(campus);
-    event.target.name.value = '';
+    this.props.submit(campus);
+    // console.log(this.props);
+    // this.props.addCampus(campus);
+    // event.target.name.value = '';
   }
 }
 

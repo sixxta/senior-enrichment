@@ -13,9 +13,9 @@ class AllStudents extends React.Component {
     return (
     <div>
       <ul>
-        <AddStudent addStudent={this.props.addStudent}/>
+        <AddStudent addStudent={this.props.addStudent} />
         {this.props.students.sort((a, b) => a.name.toLowerCase() > b.name.toLowerCase()).map(student => {return (
-        <Student key={student.id} student={student} removeStudent={this.props.removeStudent}/>
+        <Student key={student.id} student={student} />
         )}
       )}
        </ul>
@@ -27,6 +27,6 @@ class AllStudents extends React.Component {
 
 
 const mapState = ({ students }) => ({ students });
-const mapDispatch = { addStudent, removeStudent };
+const mapDispatch = { addStudent };
 
 export default connect(mapState, mapDispatch)(AllStudents);

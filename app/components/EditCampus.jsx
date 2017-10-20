@@ -18,9 +18,7 @@ class EditCampus extends React.Component {
       <div>
       <form onSubmit={this.submit}>
         <div>
-          <button
-          type="submit"
-          className="clickable">
+          <button type="submit">
             Submit Edits
           </button>
         </div>
@@ -30,8 +28,8 @@ class EditCampus extends React.Component {
               name="name"
               type="text"
               placeholder="name"
-              required
-              className="form-like"
+              defaultValue={this.props.name}
+              required={this.props.name}
             />
           </h4>
         </div>
@@ -62,6 +60,7 @@ class EditCampus extends React.Component {
     const id = this.props.id;
     console.log(campus);
     this.props.updateCampus(id, campus);
+    this.props.update(campus)
   }
   updateStudentCampus(event){
     event.stopPropagation();
@@ -72,7 +71,6 @@ class EditCampus extends React.Component {
     } else {
       newStudent.campusId = null
     }
-    console.log(newStudent)
     this.props.updateStudent(event.target.id, newStudent);
   }
 

@@ -10,33 +10,35 @@ class EditStudent extends React.Component {
 
   render(){
     return (
-      <div className="list-group-item min-content user-item">
+      <div >
       <form onSubmit={this.submit}>
-        <div className="media-left media-middle icon-container">
+        <div >
           <button
-            type="submit"
-            className="glyphicon glyphicon-plus clickable" />
+            type="submit">
+          Submit edits
+          </button>
         </div>
-        <div className="media-body">
-          <h4 className="media-heading tucked">
+        <div >
+          <h4 >
             <input
               name="name"
               type="text"
-              placeholder="name"
+              placeholder={this.props.name}
+              defaultValue={this.props.name}
               required
-              className="form-like"
             />
           </h4>
-          <h4 className="media-heading tucked">
+          <h4>
             <input
               name="email"
               type="text"
-              placeholder="email"
+              placeholder={this.props.email}
+              defaultValue={this.props.email}
               required
               className="form-like"
             />
           </h4>
-          <h4 className="media-heading tucked">
+          <h4>
             <select name="campusId">
               {this.props.campuses.map(campus => { return (
                 <option key={campus.id} value={campus.id}>{campus.name}</option>
@@ -57,6 +59,7 @@ class EditStudent extends React.Component {
     };
     const id = this.props.id;
     this.props.updateStudent(id, student);
+    this.props.update(student);
     this.props.switchView();
   }
 }

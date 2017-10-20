@@ -14,9 +14,12 @@ class Student extends React.Component {
     return (
       <div key={student.id}>
         <NavLink to={`/students/${student.id}`}>
-        <li> Name: {student.name} Email: {student.email}</li>
+        <li> Name: {student.name}</li>
         </NavLink>
-        <button className="btn btn-default" onClick={this.removeStudentCallback}>X
+        <li> Email: {student.email}</li>
+        <li> Campus: {(student.campus) ? student.campus.name : 'None Assigned'}
+        </li>
+        <button onClick={this.removeStudentCallback}>X
         </button>
        </div>
     )
@@ -25,7 +28,7 @@ class Student extends React.Component {
   removeStudentCallback (event) {
     event.stopPropagation();
     const id = this.props.student.id;
-    this.props.onClick(id)
+    this.props.onClick(id);
   }
 }
 
